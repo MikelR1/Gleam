@@ -16,6 +16,9 @@
     ],
     "client": [
       "net.thatmaidenjaden.gleam.GleamClient"
+    ],
+    "modmenu": [
+      "net.thatmaidenjaden.gleam.config.screen.ModMenuCompat"
     ]
   },
   "accessWidener": "gleam.accesswidener",

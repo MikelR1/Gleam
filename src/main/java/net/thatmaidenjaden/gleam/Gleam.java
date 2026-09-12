@@ -3,7 +3,6 @@ package net.thatmaidenjaden.gleam;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
 import net.thatmaidenjaden.gleam.config.GleamConfigImpl;
-import net.thatmaidenjaden.gleam.config.GleamConfigs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +12,6 @@ public final class Gleam implements ModInitializer {
 
     public void onInitialize() {
         GleamConfigImpl.init();
-        LOGGER.info(String.valueOf(GleamConfigs.ENABLE_COLORED_LIGHTS.get()));
     }
 
     public static ResourceLocation gleamPath(String path) {

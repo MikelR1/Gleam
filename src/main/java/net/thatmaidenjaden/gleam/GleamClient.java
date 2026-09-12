@@ -11,6 +11,7 @@ public final class GleamClient implements ClientModInitializer {
     public void onInitializeClient() {
         if (FabricLoader.getInstance().getModContainer("veil").isPresent()) GleamVeilPreProcessor.initializePatch();
         GleamEvents.registerReloadListener();
+        GleamClientEvents.onClientSetup();
         GleamClientEvents.onShaderRegistration();
     }
 }

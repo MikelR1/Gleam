@@ -36,20 +36,20 @@ public class ClothConfigScreen {
         return configBuilder.entryBuilder()
                 .startBooleanToggle(name, value.value())
                 .setDefaultValue(value.getDefaultValue())
-                .setTooltip(getTooltipComponents(value, name).toArray(new Component[0])).setSaveConsumer(value::setValue).build();
+                .setTooltip(getTooltipComponents(value, name)).setSaveConsumer(value::setValue).build();
     }
 
     public static DoubleListEntry doubleEntry(ConfigBuilder configBuilder, TrackedValue<Double> value, MutableComponent name) {
         return configBuilder.entryBuilder()
                 .startDoubleField(name, value.value())
                 .setDefaultValue(value.getDefaultValue())
-                .setTooltip(getTooltipComponents(value, name).toArray(new Component[0])).setSaveConsumer(value::setValue).build();
+                .setTooltip(getTooltipComponents(value, name)).setSaveConsumer(value::setValue).build();
     }
 
-    public static ArrayList<Component> getTooltipComponents(TrackedValue<?> value, MutableComponent name) {
+    public static Component[] getTooltipComponents(TrackedValue<?> value, MutableComponent name) {
         ArrayList<Component> tooltipComponents = new ArrayList<>();
         tooltipComponents.add(name.copy().withStyle(ChatFormatting.BOLD));
         value.metadata(Comment.TYPE).forEach(comment -> tooltipComponents.add(Component.literal(comment)));
-        return tooltipComponents;
+        return tooltipComponents.toArray(new Component[0]);
     }
 }
